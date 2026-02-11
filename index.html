@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Divya</h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-image">
+            <img src="https://media.istockphoto.com/id/2182034835/vector/women-freelancer-in-trendy-style-working-his-project-remote-job.jpg?s=612x612&w=0&k=20&c=mMdKX1wBJqXQhFyH2hA5GOt_wxRjyi8tNsDbDG1WErk=" alt="Profile">
+        </div>
+
+        <div class="hero-text">
+            <h2><span id="typing-text"></span></h2>
+            <h3>I'm a BCA Student</h3>
+            <p>
+                I am a beginner web developer creating simple and responsive
+                websites using HTML,CSS and JavaScript.
+            </p>
+            <button>Download CV</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>Hello! I'm Divya, a BCA student passionate about web development. I love creating clean, responsive websites that provide great user experiences.</p>
+            <p>I'm currently learning HTML, CSS, and JavaScript to build modern web applications. I believe in continuous learning and improving my skills every day.</p>
+            <h3>My Journey</h3>
+            <p>Started my coding journey during my BCA course and fell in love with web development. I enjoy turning ideas into interactive web experiences.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%;"></div>
+                </div>
+                <p>85%</p>
+            </div>
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%;"></div>
+                </div>
+                <p>80%</p>
+            </div>
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 60%;"></div>
+                </div>
+                <p>60%</p>
+            </div>
+            <div class="skill-card">
+                <h3>C</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 70%;"></div>
+                </div>
+                <p>70%</p>
+            </div>
+            <div class="skill-card">
+                <h3>C++</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 65%;"></div>
+                </div>
+                <p>65%</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p><strong>Email:</strong> divya@example.com</p>
+                <p><strong>Phone:</strong> +91 XXXXXXXXXX</p>
+                <p><strong>Location:</strong> India</p>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Links Section -->
+    <section class="links">
+        <h2>Follow Me</h2>
+        <div class="links-container">
+            <a href="https://www.linkedin.com/in/divya-magar" target="_blank" title="LinkedIn">
+                <div class="link-card">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Connect with me on LinkedIn</p>
+                </div>
+            </a>
+            <a href="https://github.com/divyamagar" target="_blank" title="GitHub">
+                <div class="link-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>Check out my projects on GitHub</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Typing effect for hero section
+        const typingText = document.getElementById('typing-text');
+        // const text = "Welcome to My Portfolio";
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                typingText.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 100);
+            }
+        }
+
+        type();
+
+        // Smooth scrolling for navigation links
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Shows which nav item is "active" when scrolling
+        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
